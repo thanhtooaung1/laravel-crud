@@ -24,7 +24,17 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'price' => 'required',
+            'size' => 'required',
+            'quantity' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Name field is required!'
         ];
     }
 }

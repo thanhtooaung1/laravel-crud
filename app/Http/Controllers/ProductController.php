@@ -37,6 +37,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
+
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
@@ -54,7 +55,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('product.detail', compact('product'));
     }
 
     /**

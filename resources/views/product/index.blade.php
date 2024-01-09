@@ -6,6 +6,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body shadow">
+                        <a class="btn btn-success btn-sm mb-3" href="{{ route('product.create') }}"><i
+                                class="fa-solid fa-plus"></i></a>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -31,6 +33,12 @@
                                                     class="btn btn-outline-warning me-2">
                                                     <i class="fa-regular fa-pen-to-square"></i>
                                                 </a>
+
+                                                <a href="{{ route('product.show', $product->id) }}"
+                                                    class="btn btn-outline-info me-2">
+                                                    <i class="fas fa-info"></i>
+                                                </a>
+
                                                 <form action="{{ route('product.destroy', $product->id) }}" method="post">
                                                     @method('delete')
                                                     @csrf
